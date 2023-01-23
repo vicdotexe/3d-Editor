@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/GameDev/Solutions/EliMaster/Eli/DefaultContent/Eli/Effects/BasicTerrainShader.fx</SourceFile>
+  <SourceTime>2020-07-20T21:02:19.8522021-07:00</SourceTime>
+  <DestFile>C:/GameDev/Solutions/EliMaster/Eli/DefaultContent/binDesktopGL/Eli/Effects/BasicTerrainShader.xnb</DestFile>
+  <DestTime>2020-07-24T14:50:32.6170296-07:00</DestTime>
+  <Importer>EffectImporter</Importer>
+  <ImporterTime>2018-12-08T08:35:54-08:00</ImporterTime>
+  <Processor>EffectProcessor</Processor>
+  <ProcessorTime>2018-12-08T08:35:54-08:00</ProcessorTime>
+  <Parameters>
+    <Key>DebugMode</Key>
+    <Value>Auto</Value>
+  </Parameters>
+  <Parameters>
+    <Key>Defines</Key>
+    <Value />
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

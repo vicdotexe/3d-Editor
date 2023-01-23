@@ -1,0 +1,156 @@
+MGFX 4xps_uniforms_vec4P       0 @ vs_uniforms_vec4p   @  ,  #ifdef GL_ES
+precision mediump float;
+precision mediump int;
+#endif
+
+uniform vec4 ps_uniforms_vec4[5];
+const vec4 ps_c5 = vec4(2.0, -1.0, 1.0, 0.0);
+vec4 ps_r0;
+vec4 ps_r1;
+vec4 ps_r2;
+vec4 ps_r3;
+vec4 ps_r4;
+vec4 ps_r5;
+vec4 ps_r6;
+vec4 ps_r7;
+vec4 ps_r8;
+vec4 ps_r9;
+#define ps_c0 ps_uniforms_vec4[0]
+#define ps_c1 ps_uniforms_vec4[1]
+#define ps_c2 ps_uniforms_vec4[2]
+#define ps_c3 ps_uniforms_vec4[3]
+#define ps_c4 ps_uniforms_vec4[4]
+uniform sampler2D ps_s0;
+uniform sampler2D ps_s1;
+uniform sampler2D ps_s2;
+uniform sampler2D ps_s3;
+uniform sampler2D ps_s4;
+uniform sampler2D ps_s5;
+uniform sampler2D ps_s6;
+uniform sampler2D ps_s7;
+uniform sampler2D ps_s8;
+varying vec4 vTexCoord0;
+#define ps_v0 vTexCoord0
+#define ps_oC0 gl_FragData[0]
+varying vec4 vTexCoord1;
+#define ps_v1 vTexCoord1
+#define ps_oC1 gl_FragData[1]
+
+void main()
+{
+	ps_r0.xyz = normalize(-ps_c0.xyz);
+	ps_r1.xy = ps_c4.xy * ps_v0.xy;
+	ps_r2 = texture2D(ps_s8, ps_r1.xy);
+	ps_r1 = texture2D(ps_s4, ps_r1.xy);
+	ps_r3.xy = ps_c3.xy * ps_v0.xy;
+	ps_r4 = texture2D(ps_s7, ps_r3.xy);
+	ps_r3 = texture2D(ps_s3, ps_r3.xy);
+	ps_r5.xy = ps_c1.xy * ps_v0.xy;
+	ps_r6 = texture2D(ps_s5, ps_r5.xy);
+	ps_r5 = texture2D(ps_s1, ps_r5.xy);
+	ps_r7.xy = ps_c2.xy * ps_v0.xy;
+	ps_r8 = texture2D(ps_s6, ps_r7.xy);
+	ps_r7 = texture2D(ps_s2, ps_r7.xy);
+	ps_r9 = texture2D(ps_s0, ps_v0.xy);
+	ps_r8.xyz = ps_r8.xyz * ps_r9.yyy;
+	ps_r6.xyz = (ps_r9.xxx * ps_r6.xyz) + ps_r8.xyz;
+	ps_r4.xyz = (ps_r9.zzz * ps_r4.xyz) + ps_r6.xyz;
+	ps_r2.xyz = (ps_r9.www * ps_r2.xyz) + ps_r4.xyz;
+	ps_r2.xyz = (ps_r2.xyz * ps_c5.xxx) + ps_c5.yyy;
+	ps_r4.x = dot(ps_r2.xyz, ps_v2.xyz);
+	ps_r4.y = dot(ps_r2.xyz, ps_v3.xyz);
+	ps_r4.z = dot(ps_r2.xyz, ps_v4.xyz);
+	ps_r0.x = clamp(dot(ps_r0.xyz, ps_r4.xyz), 0.0, 1.0);
+	ps_r2 = ps_r7 * ps_r9.yyyy;
+	ps_r2 = (ps_r9.xxxx * ps_r5) + ps_r2;
+	ps_r2 = (ps_r9.zzzz * ps_r3) + ps_r2;
+	ps_r1 = (ps_r9.wwww * ps_r1) + ps_r2;
+	ps_oC0 = ps_r0.xxxx * ps_r1;
+	ps_r0.x = 1.0 / ps_v1.w;
+	ps_oC1.x = (ps_v1.z * -ps_r0.x) + ps_c5.z;
+	ps_oC1.yzw = ps_c5.wwz;
+}
+
+	      ÿÿÿÿ            ps_s0    ÿÿÿÿ            ps_s1    ÿÿÿÿ            ps_s2	    ÿÿÿÿ            ps_s3
+    ÿÿÿÿ            ps_s4    ÿÿÿÿ            ps_s5    ÿÿÿÿ            ps_s6    ÿÿÿÿ            ps_s7    ÿÿÿÿ            ps_s8  5  #ifdef GL_ES
+precision highp float;
+precision mediump int;
+#endif
+
+uniform vec4 vs_uniforms_vec4[12];
+uniform vec4 posFixup;
+vec4 vs_r0;
+vec4 vs_r1;
+vec4 vs_r2;
+vec4 vs_r3;
+#define vs_c0 vs_uniforms_vec4[0]
+#define vs_c1 vs_uniforms_vec4[1]
+#define vs_c2 vs_uniforms_vec4[2]
+#define vs_c3 vs_uniforms_vec4[3]
+#define vs_c4 vs_uniforms_vec4[4]
+#define vs_c5 vs_uniforms_vec4[5]
+#define vs_c6 vs_uniforms_vec4[6]
+#define vs_c7 vs_uniforms_vec4[7]
+#define vs_c8 vs_uniforms_vec4[8]
+#define vs_c9 vs_uniforms_vec4[9]
+#define vs_c10 vs_uniforms_vec4[10]
+#define vs_c11 vs_uniforms_vec4[11]
+attribute vec4 vs_v0;
+#define vs_o0 gl_Position
+attribute vec4 vs_v1;
+varying vec4 vTexCoord0;
+#define vs_o1 vTexCoord0
+attribute vec4 vs_v2;
+vec4 vs_o2;
+attribute vec4 vs_v3;
+varying vec4 vTexCoord1;
+#define vs_o3 vTexCoord1
+vec4 vs_o4;
+vec4 vs_o5;
+vec4 vs_o6;
+
+void main()
+{
+	vs_r0.x = dot(vs_v0, vs_c0);
+	vs_r0.y = dot(vs_v0, vs_c1);
+	vs_r0.z = dot(vs_v0, vs_c2);
+	vs_r0.w = dot(vs_v0, vs_c3);
+	vs_o0 = vs_r0;
+	vs_o3 = vs_r0;
+	vs_o1.xy = vs_v1.xy;
+	vs_r0.x = dot(vs_v2.xyz, vs_c4.xyz);
+	vs_r0.y = dot(vs_v2.xyz, vs_c5.xyz);
+	vs_r0.z = dot(vs_v2.xyz, vs_c6.xyz);
+	vs_o2.xyz = vs_r0.xyz;
+	vs_r1.xyz = normalize(vs_r0.xyz);
+	vs_r0.x = dot(vs_v3.xyz, vs_c4.xyz);
+	vs_r0.y = dot(vs_v3.xyz, vs_c5.xyz);
+	vs_r0.z = dot(vs_v3.xyz, vs_c6.xyz);
+	vs_r2.xyz = normalize(vs_r0.xyz);
+	vs_o4.x = vs_r2.x;
+	vs_r0.xyz = vs_v3.xyz;
+	vs_r3.xyz = vs_r0.zxy * vs_v2.yzx;
+	vs_r0.xyz = (vs_r0.yzx * vs_v2.zxy) + -vs_r3.xyz;
+	vs_r3.x = dot(vs_r0.xyz, vs_c4.xyz);
+	vs_r3.y = dot(vs_r0.xyz, vs_c5.xyz);
+	vs_r3.z = dot(vs_r0.xyz, vs_c6.xyz);
+	vs_r0.xyz = normalize(vs_r3.xyz);
+	vs_o4.y = vs_r0.x;
+	vs_o4.z = vs_r1.x;
+	vs_o5.x = vs_r2.y;
+	vs_o6.x = vs_r2.z;
+	vs_o5.y = vs_r0.y;
+	vs_o6.y = vs_r0.z;
+	vs_o5.z = vs_r1.y;
+	vs_o6.z = vs_r1.z;
+	gl_Position.y = gl_Position.y * posFixup.y;
+	gl_Position.xy += posFixup.zw * gl_Position.ww;
+	gl_Position.z = gl_Position.z * 2.0 - gl_Position.w;
+}
+
+ vs_v0    vs_v1   vs_v2   vs_v3   lightDirection                
+UVChannel0            
+UVChannel1            
+UVChannel2            
+UVChannel3            wvp                                                                    world                                                                    splatMap      textureChannel0      textureChannel1      textureChannel2      textureChannel3      normalChannel0      normalChannel1      normalChannel2      normalChannel3      
+Technique1 Pass1     

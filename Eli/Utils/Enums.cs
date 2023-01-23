@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Eli
+{
+    public enum HorizontalAlign
+    {
+        Left,
+        Center,
+        Right
+    }
+
+
+    public enum VerticalAlign
+    {
+        Top,
+        Center,
+        Bottom
+    }
+
+
+    public enum Edge
+    {
+        Top,
+        Bottom,
+        Left,
+        Right
+    }
+
+
+    public enum Direction
+    {
+        Up,
+        Down,
+        Left,
+        Right
+    }
+}
